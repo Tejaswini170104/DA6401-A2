@@ -107,4 +107,8 @@ best_config = {
 ```
 Final Test Accuracy : 
 
-
+Creative Visual Grid of Predictions (10*3)
+To visualize model performance, I created a 10 × 3 image grid showing predictions on randomly selected test images.
+- Green titles: Correct predictions
+- Red titles: Incorrect predictions
+- Each cell displays the predicted and true label
