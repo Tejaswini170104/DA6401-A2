@@ -116,9 +116,8 @@ To visualize model performance, I created a 10 × 3 image grid showing predictio
 # Question 01 & 02: Answer in markdown cell (PartB.ipynb)
 # Question 03 : Fine-Tuning ResNet50 on iNaturalist 12K 
 
-This project fine-tunes a **ResNet50** model using **PyTorch Lightning** on the 10-class variant of the **iNaturalist 12K** dataset. The goal is to explore different transfer learning strategies and identify the most effective approach for fine-tuning.
+This project fine-tunes a **ResNet50** model using **PyTorch Lightning** on the 10-class variant of the **iNaturalist 12K** dataset. The goal is to explore different transfer learning strategies and identify the most effective approach for fine-tuning. <br>
 
----
 
  Dataset
 
@@ -164,3 +163,4 @@ net.fc = nn.Sequential(
 - Epochs: 5 <br>
 
 Test Accuracy with last_block fine-tuning: 84.04%
+# Inferences listed as markdown in PartB.ipynb
