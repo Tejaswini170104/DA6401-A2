@@ -10,7 +10,7 @@
 
 
  Model: `FlexibleCNN` <br>
-A CNN with 555 conv-activation-maxpool blocks followed by:
+A CNN with 5 conv-activation-maxpool blocks followed by:
 - 1 dense layer with `n` neurons
 - 1 output layer with `10` neurons (for 10 classes)
 
@@ -19,7 +19,7 @@ A CNN with 555 conv-activation-maxpool blocks followed by:
 - `k` : kernel size  
 - `n` : neurons in the dense layer  
 - Activation function 
-- Input image size (default: `224x224`)  
+- Input image size (default: `224x224x3`)  
 
 
 Computation Metrics
@@ -43,7 +43,7 @@ Configurable CNN with
 - 5 convolutional blocks
 - Flexible filter layouts (same/double/half)
 - Built-in augmentation toggle
--  BatchNorm, Dropout
+- BatchNorm, Dropout
 - Dense layer with ReLU before final output
 
 Training Setup
@@ -128,7 +128,7 @@ This project fine-tunes a **ResNet50** model using **PyTorch Lightning** on the 
 
 Transfer Learning Strategies Evaluated
 
-| Strategy        | Validation Accuracy (on 200 samples) |
+| Strategy        | Validation Accuracy (on 200 training samples per class) |
 |----------------|---------------------------------------|
 |  Head-only    | 57%                                   |
 |  Partial      | 67%                                   |
