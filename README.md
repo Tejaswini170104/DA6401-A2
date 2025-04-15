@@ -23,9 +23,8 @@ A CNN with 555 conv-activation-maxpool blocks followed by:
 - Activation function 
 - Input image size (default: `224x224`)  
 
----
 
-## Computation Metrics
+Computation Metrics
 - `compute_parameters(m, k, n)`: total trainable parameters  
 - `compute_computations(m, k)`: total convolution operations  
 
