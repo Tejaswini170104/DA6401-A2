@@ -27,7 +27,7 @@ A CNN with 555 conv-activation-maxpool blocks followed by:
 Computation Metrics
 - `compute_parameters(m, k, n)`: total trainable parameters  
 - `compute_computations(m, k)`: total convolution operations
-  # 📘 Question 02: Hyperparameter Tuning with W&B Sweep on iNaturalist Dataset
+  # Question 02: Hyperparameter Tuning with W&B Sweep on iNaturalist 
 
 This experiment involves training a configurable CNN using PyTorch Lightning on the iNaturalist 12K dataset with **hyperparameter tuning via Weights & Biases (W&B) sweep**.
 
