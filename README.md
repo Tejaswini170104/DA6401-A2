@@ -135,7 +135,7 @@ Transfer Learning Strategies Evaluated
 |  Partial      | 67%                                   |
 |  Last block   | **71%** (selected)                    |
 
-> The `"last_block"` strategy fine-tunes only `layer4` and `fc` layers of ResNet50.
+ The `"last_block"` strategy fine-tunes only `layer4` and `fc` layers of ResNet50. <br>
 
 
 
@@ -161,5 +161,5 @@ net.fc = nn.Sequential(
 
 - Batch size: 64
 
-- Epochs: 5
+- Epochs: 5 <br>
 Test Accuracy with last_block fine-tuning: 84.04%
