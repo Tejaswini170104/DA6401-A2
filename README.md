@@ -5,19 +5,18 @@ This project builds a configurable CNN using PyTorch Lightning to classify image
 
 ---
 
-## Dataset Setup
+ Dataset Setup
 - Mounted from Google Drive.
 - Extracted from `nature_12K.zip` to `/content/inaturalist_12K`.
 - Mean and std for normalization computed from training images.
 
----
 
-## Model: `FlexibleCNN`
+ Model: `FlexibleCNN`
 A CNN with 555 conv-activation-maxpool blocks followed by:
 - 1 dense layer with `n` neurons
 - 1 output layer with `10` neurons (for 10 classes)
 
-### Configurable Parameters
+ Configurable Parameters
 - `m` : number of filters per conv layer  
 - `k` : kernel size  
 - `n` : neurons in the dense layer  
