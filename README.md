@@ -162,5 +162,5 @@ net.fc = nn.Sequential(
 
 - Epochs: 5 <br>
 
-Test Accuracy with last_block fine-tuning: 84.04%
+Test Accuracy with last_block fine-tuning: 84.05 %
 # Inferences listed as markdown in PartB.ipynb
