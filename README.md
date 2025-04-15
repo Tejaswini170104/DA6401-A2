@@ -2,7 +2,6 @@
 # Part A
 # Question 01: Flexible CNN on iNaturalist Dataset
 
----
 
  Dataset Setup
 - Mounted from Google Drive.
@@ -28,7 +27,7 @@ Computation Metrics
 - `compute_computations(m, k)`: total convolution operations
 # Question 02: Hyperparameter Tuning with W&B Sweep on iNaturalist 
 
----
+
 
  Dataset Setup
 - Mounted from Google Drive: `nature_12K.zip`
@@ -80,7 +79,7 @@ wandb.agent(sweep_id, function=launch_training, count=15)
 
 # Question 04: Final Test Evaluation using Best Model
 
----
+
 
 Test Data Usage
 - Dataset path: `/content/inaturalist_12K/val`
