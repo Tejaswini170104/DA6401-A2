@@ -113,3 +113,53 @@ To visualize model performance, I created a 10 × 3 image grid showing predictio
 - Red titles: Incorrect predictions
 - Each cell displays the predicted and true label
 # Part B
+# Question 01 & 02: Answer in markdown cell (PartB.ipynb)
+# Question 03 : Fine-Tuning ResNet50 on iNaturalist 12K 
+
+This project fine-tunes a **ResNet50** model using **PyTorch Lightning** on the 10-class variant of the **iNaturalist 12K** dataset. The goal is to explore different transfer learning strategies and identify the most effective approach for fine-tuning.
+
+---
+
+ Dataset
+
+- **Source**: `nature_12K.zip` (mounted from Google Drive in Colab)
+- **Preprocessing**:
+- Resize to `224x224` (ImageNet standard)
+- Normalize with dataset-specific `mean` and `std`
+
+Transfer Learning Strategies Evaluated
+
+| Strategy        | Validation Accuracy (on 200 samples) |
+|----------------|---------------------------------------|
+|  Head-only    | 57%                                   |
+|  Partial      | 67%                                   |
+|  Last block   | **71%** (selected)                    |
+
+> The `"last_block"` strategy fine-tunes only `layer4` and `fc` layers of ResNet50.
+
+
+
+Model Architecture
+
+- Base model: **ResNet50** with pretrained ImageNet weights
+- Modified FC layer:
+```python
+net.fc = nn.Sequential(
+    original_fc,         # 1000-class original output
+    nn.ReLU(),
+    nn.Linear(1000, 10)  # Adapted for 10-class iNaturalist
+)
+```
+ Training Configuration
+- Framework: PyTorch Lightning
+
+- Logging: Weights & Biases (wandb)
+
+- Optimizer: Adam (lr=1e-4)
+
+- Loss: CrossEntropyLoss
+
+- Batch size: 64
+
+- Epochs: 5
+Test Accuracy with last_block fine-tuning: 84.04%
