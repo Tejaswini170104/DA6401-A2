@@ -43,14 +43,22 @@ This experiment involves training a configurable CNN using PyTorch Lightning on 
 
 
  Model: `CustomCNN`
-Configurable CNN with:
+Configurable CNN with
 - 5 convolutional blocks
 - Flexible filter layouts (same/double/half)
-- Optional BatchNorm, Dropout
+- Built-in augmentation toggle
+-  BatchNorm, Dropout
 - Dense layer with ReLU before final output
 
+Training Setup
+- Optimizer: Adam
+- Max Epochs: 10
+- Early stopping on val_acc (patience = 3)
+- Image Size: 224x224
+- Batch Size: 64
+
  Config Parameters
-- `base_filter`: base #filters (64/128)
+- `base_filter`: base filters (64/128)
 - `kernel_size`: 3 or 5
 - `activation`: ReLU, GELU, SiLU, Mish
 - `filter_type`: same/double/half
@@ -70,6 +78,39 @@ Configurable CNN with:
 ```python
 sweep_id = wandb.sweep(sweep_settings, project="inat-sweep-v3")
 wandb.agent(sweep_id, function=launch_training, count=15)
+```
+# Question 03 : Wandb report
+---
+# Question 04: Final Test Evaluation using Best Model
 
+Using the **best configuration** discovered during the W&B sweep (Question 2), we now evaluate the model on the **unseen test set**.
+
+---
+
+Test Data Usage
+- Dataset path: `/content/inaturalist_12K/val`
+- Test data was **never used** during model selection or hyperparameter tuning
+- All model selection was strictly based on train-validation performance
+
+Evaluation Strategy
+- Trained the best model for 10 epochs on full training data
+- Selected best checkpoint based on test accuracy
+- Loaded the checkpoint and evaluated accuracy on the held-out test set
+- Accuracy calculated using sklearn.metrics.accuracy_score
+
+Best Model Configuration (from sweep)
+```python
+best_config = {
+    "base_filter": 128,
+    "kernel_size": 3,
+    "activation": "SiLU",
+    "filter_type": "same",
+    "batch_norm": False,
+    "augmentation": True,
+    "dropout": 0,
+    "dense_neurons": 512
+}
+```
+Final Test Accuracy : 
 
 
