@@ -1,7 +1,6 @@
-# DA6401-A2
+# DA6401-A2 
+# Part A
 # Question 01: Flexible CNN on iNaturalist Dataset
-
-This experiment builds a configurable CNN using PyTorch Lightning to classify images from the iNaturalist 12K dataset.
 
 ---
 
@@ -28,8 +27,6 @@ Computation Metrics
 - `compute_parameters(m, k, n)`: total trainable parameters  
 - `compute_computations(m, k)`: total convolution operations
 # Question 02: Hyperparameter Tuning with W&B Sweep on iNaturalist 
-
-This experiment involves training a configurable CNN using PyTorch Lightning on the iNaturalist 12K dataset with **hyperparameter tuning via Weights & Biases (W&B) sweep**.
 
 ---
 
@@ -80,10 +77,8 @@ sweep_id = wandb.sweep(sweep_settings, project="inat-sweep-v3")
 wandb.agent(sweep_id, function=launch_training, count=15)
 ```
 # Question 03 : Wandb report
----
-# Question 04: Final Test Evaluation using Best Model
 
-Using the **best configuration** discovered during the W&B sweep (Question 2), we now evaluate the model on the **unseen test set**.
+# Question 04: Final Test Evaluation using Best Model
 
 ---
 
