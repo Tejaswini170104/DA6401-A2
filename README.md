@@ -9,7 +9,7 @@
 - Mean and std for normalization computed from training images.
 
 
- Model: `FlexibleCNN`
+ Model: `FlexibleCNN` <br>
 A CNN with 555 conv-activation-maxpool blocks followed by:
 - 1 dense layer with `n` neurons
 - 1 output layer with `10` neurons (for 10 classes)
@@ -38,7 +38,7 @@ Computation Metrics
 
 
 
- Model: `CustomCNN`
+ Model: `CustomCNN` <br>
 Configurable CNN with
 - 5 convolutional blocks
 - Flexible filter layouts (same/double/half)
