@@ -152,8 +152,6 @@ net.fc = nn.Sequential(
  Training Configuration
 - Framework: PyTorch Lightning
 
-- Logging: Weights & Biases (wandb)
-
 - Optimizer: Adam (lr=1e-4)
 
 - Loss: CrossEntropyLoss
