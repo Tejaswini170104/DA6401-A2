@@ -105,7 +105,7 @@ best_config = {
     "dense_neurons": 512
 }
 ```
-Final Test Accuracy : 
+Final Test Accuracy : 41.95 %
 
 Creative Visual Grid of Predictions (10*3) <br>
 To visualize model performance, I created a 10 × 3 image grid showing predictions on randomly selected test images.
